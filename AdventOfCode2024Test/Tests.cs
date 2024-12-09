@@ -10,15 +10,11 @@ namespace AdventOfCode2024Test
         {
         }
 
-        [Test]
-        public void Test1()
-        {
-            Assert.Pass();
-        }
+      
 
 
         [Test]
-        public void exampleOrder()
+        public void DayOne_PartOne_exampleOrder()
         {
             Assert.AreEqual(11, DayOne.DistanceCalc("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayoneExample.txt"));
         }
