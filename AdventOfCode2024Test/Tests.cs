@@ -26,5 +26,11 @@ namespace AdventOfCode2024Test
             List<int> leftlist = DayOne.makeLists("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayoneExample.txt", 0);
             Assert.AreEqual(31, DayOne.CaluclateRepeasts(leftlist,rightlist));
         }
+
+        [Test]
+        public void DayTwo_PartOne()
+        {
+            Assert.AreEqual(2, DayTwo.SafeNumbers("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayTwoExample.txt"));
+        }
     }
 }
