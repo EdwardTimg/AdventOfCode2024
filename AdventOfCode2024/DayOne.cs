@@ -11,11 +11,23 @@ namespace AdventOfCode2024
     {
         public static int DistanceCalc(string filepath)
         {
-            //return 12;
+            List<int> rightList = makeLists(filepath, 1);
+            List<int> leftList= makeLists(filepath, 0);
+
+            int dist=0;
+            for(int i =0; i<rightList.Count; i++)
+            {
+                dist += Math.Abs(rightList[i] - leftList[i]);
+             }
+
+            return dist;
+        }
+
+        public static List<int> makeLists(string filepath, int index)
+        {
             string line;
             string[] workingstring;
-            List<int> rightList = [];
-            List<int> leftList= [];
+            List<int> collumList = [];
             try
             {
                 //Pass the file path and file name to the StreamReader constructor
@@ -25,10 +37,9 @@ namespace AdventOfCode2024
                 //Continue to read until you reach end of file
                 while (line != null)
                 {
-                    workingstring = line.Split(null);
-                    rightList.Add(Int32.Parse(workingstring.Last()));
-                    leftList.Add(Int32.Parse(workingstring.First()));
-                    
+                    workingstring = line.Split(' ').Select(p=>p.Trim()).Where(p=> !string.IsNullOrWhiteSpace(p)).ToArray();
+                    collumList.Add(Int32.Parse(workingstring[index]));
+
                     //Read the next line
                     line = sr.ReadLine();
                 }
@@ -40,15 +51,22 @@ namespace AdventOfCode2024
                 Console.WriteLine("Exception: " + e.Message);
             }
 
-            rightList.Sort();
-            leftList.Sort();
-            int dist=0;
-            for(int i =0; i<rightList.Count; i++)
-            {
-                dist += Math.Abs(rightList[i] - leftList[i]);
-             }
+            collumList.Sort();
 
-            return dist;
+            return collumList;
         }
+
+
+        public static int CaluclateRepeasts(List<int> leftlist, List<int> rightlist)
+        {
+            int repeassum = 0;
+            for (int i = 0; i < leftlist.Count; i++)
+            {
+                var count = rightlist.GroupBy(p => p).Where(e=> e.Key.Equals(leftlist[i])).Select(x => x.Count()).FirstOrDefault();
+                repeassum += count * leftlist[i];
+            }
+            return repeassum;
+        }
+
     }
 }
