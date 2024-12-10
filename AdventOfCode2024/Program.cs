@@ -16,5 +16,7 @@ internal class Program
 
         Console.WriteLine("Day Three Part 1 solution: " + DayThree.mulCalc("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayThree.txt"));
         Console.WriteLine("Day Three Part 2 solution: " + DayThree.mulcalcPartTwo("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayThree.txt"));
+
+        Console.WriteLine("Day Four Part 1 solution: " + DayFour.CountXmas("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFour.txt"));
     }
 }
