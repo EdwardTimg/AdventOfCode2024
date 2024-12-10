@@ -45,5 +45,12 @@ namespace AdventOfCode2024Test
         {
             Assert.AreEqual(161, DayThree.mulCalc("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayThreeExample.txt"));
         }
+
+        [Test]
+        public void DayThree_PartTwo()
+        {
+            Assert.AreEqual(48, DayThree.mulcalcPartTwo("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayThreeExample_partTwo.txt"));
+        }
     }
+
 }

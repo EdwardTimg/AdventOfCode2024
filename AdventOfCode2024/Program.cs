@@ -15,5 +15,6 @@ internal class Program
         Console.WriteLine("Day Two Part 2 Solution: " + DayTwo.DamperReportSafeNumers("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayTwo.txt"));
 
         Console.WriteLine("Day Three Part 1 solution: " + DayThree.mulCalc("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayThree.txt"));
+        Console.WriteLine("Day Three Part 2 solution: " + DayThree.mulcalcPartTwo("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayThree.txt"));
     }
 }
