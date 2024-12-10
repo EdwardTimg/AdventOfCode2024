@@ -98,8 +98,6 @@ namespace AdventOfCode2024
             string line;
             List<string> workingstring;
             int numberOfSafe = 0;
-            int numberofFailedFIrst = 0;
-            int numberofFailedSEcond = 0;
             List<int> collumList = [];
             try
             {
@@ -111,29 +109,9 @@ namespace AdventOfCode2024
                 while (line != null)
                 {
                     workingstring = line.Split(' ').Select(p => p.Trim()).Where(p => !string.IsNullOrWhiteSpace(p)).ToList();
-                    if (SortedAsscending(workingstring) || SortedDescending(workingstring))
+                    if ((SortedAsscending(workingstring)&& CheckAdjustingLevels(workingstring))|| (SortedDescending(workingstring)&& CheckAdjustingLevels(workingstring)))
                     {
-                        if (CheckAdjustingLevels(workingstring))
-                        {
-                            numberOfSafe++;
-                        }
-                        else
-                        {
-                            bool SafeNUmberFound = false;
-                            int nrOfRepeats = 0;
-                            while (nrOfRepeats < workingstring.Count && !SafeNUmberFound)
-                            {
-                                var adjustedWorkingString =  new List<string>(workingstring);
-                                adjustedWorkingString.RemoveAt(nrOfRepeats);
-                                if (CheckAdjustingLevels(adjustedWorkingString))
-                                {
-                                    numberOfSafe++;
-                                    SafeNUmberFound = true;
-                                    numberofFailedFIrst++;
-                                }
-                                nrOfRepeats++;
-                            }
-                        }
+                        numberOfSafe++;
                     }
                     else
                     {
@@ -145,14 +123,10 @@ namespace AdventOfCode2024
                             {
                                 var adjustedWorkingString = new List<string>(workingstring); 
                                 adjustedWorkingString.RemoveAt(nrOfRepeats);
-                                if (SortedAsscending(adjustedWorkingString) || SortedDescending(adjustedWorkingString))
+                                if ((SortedAsscending(adjustedWorkingString)&& CheckAdjustingLevels(adjustedWorkingString)) || (SortedDescending(adjustedWorkingString)&&CheckAdjustingLevels(adjustedWorkingString)))
                                 {
-                                    if (CheckAdjustingLevels(adjustedWorkingString))
-                                    {
-                                        numberOfSafe++;
-                                        SafeNUmberFound = true;
-                                        numberofFailedSEcond++;
-                                    }
+                                    numberOfSafe++;
+                                    SafeNUmberFound=true;
                                 }
                             }
                             nrOfRepeats++;
