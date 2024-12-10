@@ -39,5 +39,11 @@ namespace AdventOfCode2024Test
         {
             Assert.AreEqual(4, DayTwo.DamperReportSafeNumers("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayTwoExample.txt"));
         }
+
+        [Test]
+        public void DayThree_PartOne()
+        {
+            Assert.AreEqual(161, DayThree.mulCalc("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayThreeExample.txt"));
+        }
     }
 }
