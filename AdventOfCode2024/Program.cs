@@ -12,5 +12,6 @@ internal class Program
         Console.WriteLine("Day one part 2 solution: " + DayOne.CaluclateRepeasts(leftlist, rightlist));
 
         Console.WriteLine("Day Two Part 1 Solution: " +DayTwo.SafeNumbers("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayTwo.txt"));
+        Console.WriteLine("Day Two Part 2 Solution: " + DayTwo.DamperReportSafeNumers("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayTwo.txt"));
     }
 }

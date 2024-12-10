@@ -32,5 +32,12 @@ namespace AdventOfCode2024Test
         {
             Assert.AreEqual(2, DayTwo.SafeNumbers("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayTwoExample.txt"));
         }
+
+
+        [Test]
+        public void DayTwo_PartTwo()
+        {
+            Assert.AreEqual(4, DayTwo.DamperReportSafeNumers("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayTwoExample.txt"));
+        }
     }
 }
