@@ -57,6 +57,12 @@ namespace AdventOfCode2024Test
         {
             Assert.AreEqual(18, DayFour.CountXmas("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFourExample.txt"));
         }
+
+        [Test]
+        public void DayFour_PartTwo()
+        {
+            Assert.AreEqual(9, DayFour.CountMas("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFourExample.txt"));
+        }
     }
 
 }

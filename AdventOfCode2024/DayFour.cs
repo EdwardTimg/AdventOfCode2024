@@ -12,11 +12,6 @@ namespace AdventOfCode2024
     {
         public static int CountXmas(string filepath)
         {
-
-            int one = 0;
-            int two = 0;
-            int three = 0;  
-            int four = 0;
             string line;
             List<string> workingstring = [];
             List<string> horizontalstring = [];
@@ -79,10 +74,41 @@ namespace AdventOfCode2024
                 }
 
             }
-            
-
-            
+              
             return occurences;
+        }
+
+        public static int CountMas(string filepath)
+        {
+            int count = 0;
+
+            List<string> input = File.ReadLines(filepath).ToList();
+            for (int i = 0; i < input.Count; i++)
+            {
+                for (int j = 0; j < input[i].Length; j++)
+                {
+                    if (input[i][j].ToString().Equals("A") && i != 0 && i!=input.Count-1 && j!=0 && j != input[i].Length-1){
+                        if (IsXmas(input, i, j))
+                        {
+                            count++;
+                        }
+                        
+                    }
+                }
+            }
+
+            return count;
+        }
+
+
+        public static bool IsXmas(List<string> input, int i, int j)
+        {
+            if (((input[i - 1][j-1].ToString().Equals("M") && input[i + 1][j + 1].ToString().Equals("S")) || (input[i - 1][j - 1].ToString().Equals("S") && input[i + 1][j + 1].ToString().Equals("M"))) && ((input[i - 1][j + 1].ToString().Equals("M") && input[i + 1][j - 1].ToString().Equals("S"))||(input[i - 1][j + 1].ToString().Equals("S") && input[i + 1][j - 1].ToString().Equals("M"))))
+            {
+                return true;
+            }
+            else return false;
+            
         }
     }
 }
