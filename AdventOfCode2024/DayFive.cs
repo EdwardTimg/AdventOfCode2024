@@ -51,7 +51,7 @@ namespace AdventOfCode2024
             return result;
         }
 
-        public static int printingCalcRearrange(string filepathRules, string filepathOrder)
+        public static int printingCalcRearange(string filepathRules, string filepathOrder)
         {
             int result = 0;
             List<string> inputOrder = File.ReadLines(filepathOrder).ToList();
@@ -79,28 +79,35 @@ namespace AdventOfCode2024
                     }
                 }
             }
-            result = OrderRearanger(incorrectOrders,inputRules);
+            result = OrderRearange(incorrectOrders,inputRules);
 
-            return incorrectOrders.Count ;
+            return result;//incorrectOrders.Count ;
         }
 
-        public static int OrderRearanger(List<List<string>> incorrectOrder, List<string> inputRules)
+        public static int OrderRearange(List<List<string>> incorrectOrder, List<string> inputRules)
         {
             int result = 0;
             bool correctOrder = false;
             for (int i= 0; i < incorrectOrder.Count; i ++)
             {
-                for(int j = 1; j+i < incorrectOrder[i].Count; j++)
+                for(int j = 0; j+1 < incorrectOrder[i].Count; j++)
                 {
-                    if (!inputRules.Contains(incorrectOrder[i][j] + "|" + incorrectOrder[i][j + i]))
+                    if (!inputRules.Contains(incorrectOrder[i][j] + "|" + incorrectOrder[i][j+1]))
                     {
                         correctOrder = false;
-                        var value = incorrectOrder[i][j];
-                        incorrectOrder[i].RemoveAt(j);
-                        if (!(j + 1 > incorrectOrder[i].Count))
+                        var value = incorrectOrder[i][j];  
+                        if (!(j + 1 >= incorrectOrder[i].Count))
                         {
+                            incorrectOrder[i].RemoveAt(j);
                             incorrectOrder[i].Insert(j + 1, value);
+
                         }
+                        else
+                        {
+                            incorrectOrder[i].RemoveAt(j);
+                            incorrectOrder[i].Insert(j, value);
+                        }
+                        j = 0;
                     }
                     else
                     {
@@ -109,7 +116,7 @@ namespace AdventOfCode2024
                 }
                 if (correctOrder)
                 {
-                    result++;
+                    result += Int32.Parse(incorrectOrder[i][incorrectOrder[i].Count / 2]);
                 }
             }
 

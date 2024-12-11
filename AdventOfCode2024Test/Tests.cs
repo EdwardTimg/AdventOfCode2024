@@ -73,7 +73,7 @@ namespace AdventOfCode2024Test
         [Test]
         public void DayFive_PartTwo()
         {
-            Assert.AreEqual(123, DayFive.printingCalcRearrange("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveRulesExampel.txt", "C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveOrderExample.txt"));
+            Assert.AreEqual(123, DayFive.printingCalcRearange("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveRulesExampel.txt", "C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveOrderExample.txt"));
         }
     }
 

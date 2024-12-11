@@ -21,5 +21,6 @@ internal class Program
         Console.WriteLine("Day Four Part 2 solution: " + DayFour.CountMas("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFour.txt"));
 
         Console.WriteLine("Day Five Part 1 solution: " + DayFive.printingCalc("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveRules.txt", "C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveOrder.txt"));
+        Console.WriteLine("Day Five Part 2 solution: " + DayFive.printingCalcRearange("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveRules.txt", "C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveOrder.txt"));
     }
 }
