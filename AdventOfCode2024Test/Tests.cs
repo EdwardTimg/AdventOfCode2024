@@ -63,6 +63,18 @@ namespace AdventOfCode2024Test
         {
             Assert.AreEqual(9, DayFour.CountMas("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFourExample.txt"));
         }
+
+        [Test]
+        public void DayFive_PartOne()
+        {
+            Assert.AreEqual(143, DayFive.printingCalc("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveRulesExampel.txt", "C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveOrderExample.txt"));
+        }
+
+        [Test]
+        public void DayFive_PartTwo()
+        {
+            Assert.AreEqual(123, DayFive.printingCalcRearrange("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveRulesExampel.txt", "C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\dayFiveOrderExample.txt"));
+        }
     }
 
 }
