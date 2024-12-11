@@ -102,11 +102,6 @@ namespace AdventOfCode2024
                             incorrectOrder[i].Insert(j + 1, value);
 
                         }
-                        else
-                        {
-                            incorrectOrder[i].RemoveAt(j);
-                            incorrectOrder[i].Insert(j, value);
-                        }
                         j = 0;
                     }
                     else
