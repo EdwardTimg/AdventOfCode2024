@@ -81,6 +81,11 @@ namespace AdventOfCode2024Test
         {
             Assert.AreEqual(41, DaySix.pathCalc("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\daySixExample.txt"));
         }
+        [Test]
+        public void DaySix_PartOneSecondExample()
+        {
+            Assert.AreEqual(3, DaySix.pathCalc("C:\\Users\\edwtim\\source\\repos\\AdventOfCode2024\\AdventOfCode2024Test\\input\\DaySixSecondExample.txt"));
+        }
     }
 
 }
