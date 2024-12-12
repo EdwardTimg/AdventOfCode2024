@@ -21,11 +21,8 @@ namespace AdventOfCode2024
             while (keepMoving) {
                 
                 Dictionary<int, int> position = determinePosition(input);
-                string cordinates = position.Last().Key.ToString() + position.Last().Value.ToString();
-                if (!unikPositions.Contains(cordinates))
-                {
-                    unikPositions.Add(cordinates);
-                }
+                string cordinates = position.Last().Key.ToString() +"|"+ position.Last().Value.ToString();
+                unikPositions.Add(cordinates);
                 string currentDirection = getCharacterAtPosition(input, position);
                 Dictionary<int, int> newposition = NewPosition(position, currentDirection);
                 if(checkIfIndexIsOB(input,newposition))
@@ -61,7 +58,7 @@ namespace AdventOfCode2024
             
            
 
-            return unikPositions.Count;
+            return unikPositions.Distinct().Count();
         }
 
         public static Dictionary<int, int> determinePosition(List<string> input)
