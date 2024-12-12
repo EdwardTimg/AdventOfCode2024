@@ -19,16 +19,18 @@ namespace AdventOfCode2024
             bool keepMoving = true;
             List<string> unikPositions = new List<string>();
             while (keepMoving) {
+                
                 Dictionary<int, int> position = determinePosition(input);
+                string cordinates = position.Last().Key.ToString() + position.Last().Value.ToString();
+                if (!unikPositions.Contains(cordinates))
+                {
+                    unikPositions.Add(cordinates);
+                }
                 string currentDirection = getCharacterAtPosition(input, position);
                 Dictionary<int, int> newposition = NewPosition(position, currentDirection);
                 if(checkIfIndexIsOB(input,newposition))
                 {
-                    string cordinates = position.Last().Key.ToString() + position.Last().Value.ToString();
-                    if (!unikPositions.Contains(cordinates))
-                    {
-                        unikPositions.Add(cordinates);
-                    }
+                   
                     keepMoving = false;
                     break;
                 }
@@ -36,12 +38,7 @@ namespace AdventOfCode2024
                 if (MoveIsPossible(input, newposition))
                 {
                     input = MovedPosition(input, position, newposition, currentDirection);
-                    string cordinates = position.Last().Key.ToString()+ position.Last().Value.ToString();
-                    if (!unikPositions.Contains(cordinates))
-                    {
-                        unikPositions.Add(cordinates);
-                    }
-                    result += 1;
+
                 }
                 else
                 {
