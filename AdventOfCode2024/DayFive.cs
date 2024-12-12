@@ -25,8 +25,6 @@ namespace AdventOfCode2024
                 {
                     for( int k = 1; j+k < workingstring.Count; k++)
                     {
-                        var something= workingstring[j];
-                        var somemm = workingstring[j+k];
                         if (inputRules.Contains(workingstring[j] + "|" + workingstring[j+k]))
                         {
                             ordercorrect = true;
@@ -81,7 +79,7 @@ namespace AdventOfCode2024
             }
             result = OrderRearange(incorrectOrders,inputRules);
 
-            return result;//incorrectOrders.Count ;
+            return result;
         }
 
         public static int OrderRearange(List<List<string>> incorrectOrder, List<string> inputRules)
@@ -100,7 +98,6 @@ namespace AdventOfCode2024
                         {
                             incorrectOrder[i].RemoveAt(j);
                             incorrectOrder[i].Insert(j + 1, value);
-
                         }
                         j = 0;
                     }
